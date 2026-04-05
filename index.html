@@ -15,20 +15,29 @@
   <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a class="nav-logo" href="#">JAKAL</a>
+      <a class="nav-logo" href="#">
+        <img src="image.png" alt="Jakal" class="nav-logo-img" />
+        <span>JAKAL</span>
+      </a>
       <ul class="nav-links">
-        <li><a href="#about">소개</a></li>
-        <li><a href="#team">팀원</a></li>
-        <li><a href="#projects">프로젝트</a></li>
-        <li><a href="#contact">연락처</a></li>
+        <li><a href="#about" data-i18n="nav-about">소개</a></li>
+        <li><a href="#team" data-i18n="nav-team">팀원</a></li>
+        <li><a href="#projects" data-i18n="nav-projects">프로젝트</a></li>
+        <li><a href="#contact" data-i18n="nav-contact">연락처</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="메뉴 열기" onclick="toggleMenu()">&#9776;</button>
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" onclick="toggleLang()" aria-label="언어 전환">EN</button>
+        <button class="nav-toggle" aria-label="메뉴 열기" onclick="toggleMenu()">&#9776;</button>
+      </div>
     </div>
     <ul class="nav-mobile" id="navMobile">
-      <li><a href="#about" onclick="toggleMenu()">소개</a></li>
-      <li><a href="#team" onclick="toggleMenu()">팀원</a></li>
-      <li><a href="#projects" onclick="toggleMenu()">프로젝트</a></li>
-      <li><a href="#contact" onclick="toggleMenu()">연락처</a></li>
+      <li><a href="#about" onclick="toggleMenu()" data-i18n="nav-about">소개</a></li>
+      <li><a href="#team" onclick="toggleMenu()" data-i18n="nav-team">팀원</a></li>
+      <li><a href="#projects" onclick="toggleMenu()" data-i18n="nav-projects">프로젝트</a></li>
+      <li><a href="#contact" onclick="toggleMenu()" data-i18n="nav-contact">연락처</a></li>
+      <li>
+        <button class="lang-toggle lang-toggle-mobile" onclick="toggleLang();toggleMenu()" id="langToggleMobile">EN</button>
+      </li>
     </ul>
   </nav>
 
@@ -39,20 +48,20 @@
     </div>
     <div class="hero-content">
       <div class="hero-badge">Team Jakal</div>
-      <h1 class="hero-title">
-        모든 것을 <span class="accent">자동화</span>하여<br />
-        특이점에 기여하기
+      <img src="image.png" alt="Jakal" class="hero-logo" />
+      <h1 class="hero-title" data-i18n-html="hero-title">
+        모든 것을 <span class="accent">자동화</span>하여<br />특이점에 기여하기
       </h1>
-      <p class="hero-sub">
+      <p class="hero-sub" data-i18n="hero-sub">
         Automating everything to contribute to the singularity
       </p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
-        <a href="#team" class="btn btn-ghost">팀 소개</a>
+        <a href="#projects" class="btn btn-primary" data-i18n="hero-btn-projects">프로젝트 보기</a>
+        <a href="#team" class="btn btn-ghost" data-i18n="hero-btn-team">팀 소개</a>
       </div>
     </div>
     <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-      <span>스크롤</span>
+      <span data-i18n="hero-scroll">스크롤</span>
       <div class="scroll-arrow"></div>
     </div>
   </section>
@@ -62,21 +71,21 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">About</span>
-        <h2>우리는 누구인가</h2>
-        <p>Jakal은 자동화 기술과 AI를 통해 인류의 다음 단계를 앞당기는 팀입니다.<br />반복을 없애고, 지능을 더하고, 미래를 빌드합니다.</p>
+        <h2 data-i18n="about-h2">우리는 누구인가</h2>
+        <p data-i18n-html="about-desc">Jakal은 자동화 기술과 AI를 통해 인류의 다음 단계를 앞당기는 팀입니다.<br />반복을 없애고, 지능을 더하고, 미래를 빌드합니다.</p>
       </div>
       <div class="about-stats">
         <div class="stat">
           <span class="stat-num" data-target="10">0</span>
-          <span class="stat-label">Projects</span>
+          <span class="stat-label" data-i18n="stat-projects">Projects</span>
         </div>
         <div class="stat">
           <span class="stat-num" data-target="2">0</span>
-          <span class="stat-label">Members</span>
+          <span class="stat-label" data-i18n="stat-members">Members</span>
         </div>
         <div class="stat">
           <span class="stat-num" data-target="1">0</span>
-          <span class="stat-label">Mission</span>
+          <span class="stat-label" data-i18n="stat-mission">Mission</span>
         </div>
       </div>
     </div>
@@ -87,17 +96,18 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Team</span>
-        <h2>팀원 소개</h2>
+        <h2 data-i18n="team-h2">팀원 소개</h2>
       </div>
       <div class="team-grid">
         <div class="team-card">
           <div class="team-avatar">
-            <img src="https://github.com/Ahnd6474.png" alt="Danny Ahn" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <img src="https://github.com/Ahnd6474.png" alt="Danny Ahn"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
             <div class="avatar-fallback" style="display:none">DA</div>
           </div>
           <h3>Danny Ahn</h3>
-          <p class="team-role">Co-Founder &amp; Developer</p>
-          <p class="team-desc">자동화 시스템 설계와 AI 통합을 담당합니다. Jakal Series의 핵심 아키텍처를 이끌고 있습니다.</p>
+          <p class="team-role" data-i18n="member-role">Co-Founder &amp; Developer</p>
+          <p class="team-desc" data-i18n="danny-desc">자동화 시스템 설계와 AI 통합을 담당합니다. Jakal Series의 핵심 아키텍처를 이끌고 있습니다.</p>
           <a href="https://github.com/Ahnd6474" target="_blank" rel="noopener" class="team-link">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             @Ahnd6474
@@ -105,12 +115,13 @@
         </div>
         <div class="team-card">
           <div class="team-avatar">
-            <img src="https://github.com/Albertminjae.png" alt="Albert Lee" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <img src="https://github.com/Albertminjae.png" alt="Albert Lee"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
             <div class="avatar-fallback" style="display:none">AL</div>
           </div>
           <h3>Albert Lee</h3>
-          <p class="team-role">Co-Founder &amp; Developer</p>
-          <p class="team-desc">프론트엔드 및 시스템 통합을 담당합니다. 사용자 경험과 자동화 파이프라인 구축에 집중합니다.</p>
+          <p class="team-role" data-i18n="member-role">Co-Founder &amp; Developer</p>
+          <p class="team-desc" data-i18n="albert-desc">프론트엔드 및 시스템 통합을 담당합니다. 사용자 경험과 자동화 파이프라인 구축에 집중합니다.</p>
           <a href="https://github.com/Albertminjae" target="_blank" rel="noopener" class="team-link">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             @Albertminjae
@@ -125,19 +136,15 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Projects</span>
-        <h2>프로젝트</h2>
-        <p>카드를 클릭하면 상세 정보를 확인할 수 있습니다.</p>
+        <h2 data-i18n="projects-h2">프로젝트</h2>
+        <p data-i18n="projects-hint">카드를 클릭하면 상세 정보를 확인할 수 있습니다.</p>
       </div>
-
-      <!-- Filter Tabs -->
-      <div class="filter-tabs">
-        <button class="filter-btn active" data-filter="all">전체</button>
-        <button class="filter-btn" data-filter="previous">이전 프로젝트</button>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter-all">전체</button>
+        <button class="filter-btn" data-filter="previous" data-i18n="filter-previous">이전 프로젝트</button>
         <button class="filter-btn" data-filter="jakal">Jakal Series</button>
         <button class="filter-btn" data-filter="made">Made with Jakal</button>
       </div>
-
-      <!-- Project Grid -->
       <div class="project-grid" id="projectGrid"></div>
     </div>
   </section>
@@ -147,15 +154,18 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Contact</span>
-        <h2>연락하기</h2>
-        <p>협업 제안, 문의 사항이 있으시면 언제든지 연락주세요.</p>
+        <h2 data-i18n="contact-h2">연락하기</h2>
+        <p data-i18n="contact-desc">협업 제안, 문의 사항이 있으시면 언제든지 연락주세요.</p>
       </div>
       <div class="contact-card">
         <div class="contact-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
         </div>
         <a href="mailto:jakalflow@gmail.com" class="contact-email">jakalflow@gmail.com</a>
-        <p class="contact-note">또는 GitHub에서 직접 연락하실 수 있습니다.</p>
+        <p class="contact-note" data-i18n="contact-note">또는 GitHub에서 직접 연락하실 수 있습니다.</p>
         <div class="contact-links">
           <a href="https://github.com/Ahnd6474" target="_blank" rel="noopener" class="btn btn-ghost">Danny's GitHub</a>
           <a href="https://github.com/Albertminjae" target="_blank" rel="noopener" class="btn btn-ghost">Albert's GitHub</a>
@@ -168,8 +178,11 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-logo">JAKAL</span>
-        <p>© 2024 Team Jakal. 모든 것을 자동화하여 특이점에 기여하기.</p>
+        <div class="footer-brand">
+          <img src="image.png" alt="Jakal" class="footer-logo-img" />
+          <span class="footer-logo">JAKAL</span>
+        </div>
+        <p data-i18n="footer-copy">© 2024 Team Jakal. 모든 것을 자동화하여 특이점에 기여하기.</p>
         <a href="mailto:jakalflow@gmail.com">jakalflow@gmail.com</a>
       </div>
     </div>
@@ -179,11 +192,15 @@
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
     <div class="modal" id="modal" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()" aria-label="닫기">&times;</button>
+      <div class="modal-logo-wrap" id="modalLogoWrap" style="display:none">
+        <img id="modalLogo" src="" alt="" class="modal-logo" />
+      </div>
       <div class="modal-badge" id="modalBadge"></div>
       <h2 class="modal-title" id="modalTitle"></h2>
       <p class="modal-desc" id="modalDesc"></p>
       <div class="modal-tags" id="modalTags"></div>
-      <a class="modal-link btn btn-primary" id="modalLink" href="#" target="_blank" rel="noopener">GitHub에서 보기</a>
+      <a class="modal-link btn btn-primary" id="modalLink" href="#" target="_blank" rel="noopener"
+         data-i18n="modal-btn">GitHub에서 보기</a>
     </div>
   </div>
 
